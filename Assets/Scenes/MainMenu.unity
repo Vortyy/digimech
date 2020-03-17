@@ -1882,7 +1882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1612247876
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1973,7 +1973,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pier-Alexandre Caron\n\xC9tienne M\xE9nard\n\n\n\xC9milie Fr\xE9chette\n\n\nCai
+  m_text: "\xC9tienne M\xE9nard\n\xC9mile Poulin\n\n\n\xC9milie Fr\xE9chette\n\n\nCai
     Jones"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2043,7 +2043,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1759312019}
-    characterCount: 66
+    characterCount: 58
     spriteCount: 0
     spaceCount: 11
     wordCount: 8
@@ -3268,7 +3268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2108287154
 RectTransform:
   m_ObjectHideFlags: 0
