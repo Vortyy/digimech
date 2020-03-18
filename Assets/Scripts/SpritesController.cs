@@ -6,26 +6,20 @@ public class SpritesController : MonoBehaviour
 {
     Rigidbody2D rb;
     [SerializeField] Animator animatorWheel;
+    [SerializeField] Animator animatorScissors;
     [SerializeField] GameObject wheel;
-    [SerializeField] GameObject tankChains;
-    [SerializeField] GameObject floaty;
-    GameObject bottom;
+    [SerializeField] GameObject scissors;
 
+    private float size = 0.6f;
+    public bool animBool;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        if (tankChains.activeSelf)
-            bottom = tankChains;
-        else if (floaty.activeSelf)
-            bottom = floaty;
     }
 
     void Update()
     {
-        
-
         if (wheel.activeSelf)
         {
             if (rb.velocity.x > 0 || rb.velocity.x < 0)
@@ -40,16 +34,22 @@ public class SpritesController : MonoBehaviour
 
         if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-            if (bottom != null)
-                bottom.transform.position = new Vector3(transform.position.x, transform.position.y, 2);
+            transform.localScale = new Vector2(size, size);
         }
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-            if (bottom != null)
-                bottom.transform.position = new Vector3(transform.position.x, transform.position.y, 2);
+            transform.localScale = new Vector2(-size, size);
         }
-        
+
+        if (Input.GetKey("k"))
+        {
+            if (scissors.activeSelf)
+                animatorScissors.Play("Scissors");
+        }
+        else
+        {
+            if (scissors.activeSelf)
+                animatorScissors.Play("ScissorsIdle");
+        }
     }
 }
