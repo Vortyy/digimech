@@ -47,7 +47,7 @@ public class PlayerControllerV2 : MonoBehaviour
         }
         else if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            rb2d.velocity = new Vector2(-speed, rb2d.velocity.y);
+            rb2d.velocity = new Vector2(-speed, rb2d.velocity.y);      
         }
         else rb2d.velocity = new Vector2(0, rb2d.velocity.y);
     }
