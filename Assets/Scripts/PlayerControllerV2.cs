@@ -5,9 +5,7 @@ using UnityEngine.Animations;
 
 public class PlayerControllerV2 : MonoBehaviour
 {
-    Animator animator;
     Rigidbody2D rb2d;
-    SpriteRenderer spriteRenderer;
 
     public float speed = 20f;
     public float jumpVelocity = 20f;
@@ -17,9 +15,7 @@ public class PlayerControllerV2 : MonoBehaviour
 
     void Awake()
     {
-        animator = GetComponent<Animator>();
         rb2d = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -50,6 +46,11 @@ public class PlayerControllerV2 : MonoBehaviour
             rb2d.velocity = new Vector2(-speed, rb2d.velocity.y);      
         }
         else rb2d.velocity = new Vector2(0, rb2d.velocity.y);
+
+        //if (Input.GetMouseButton(0))
+        //{
+        //    col.enabled = !col.enabled;
+        //}
     }
 
     // Detect collision with floor

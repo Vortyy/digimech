@@ -2,23 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpritesController : MonoBehaviour
+public class EnemyControllerV2 : MonoBehaviour
 {
-    Rigidbody2D rb;
-    [SerializeField] Animator animatorWheel;
-    [SerializeField] Animator animatorScissors;
-    [SerializeField] GameObject wheel;
-    [SerializeField] GameObject scissors;
 
+    [SerializeField] GameObject wheel;
+    [SerializeField] Animator animatorWheel;
+    public Rigidbody2D rb;
+
+    public bool kill = false;
+    public float health = 20;
     private float size = 0.6f;
 
-    private void Awake()
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
+        if (kill == true)
+        {
+            Destroy(this.gameObject);
+        }
+
         if (wheel.activeSelf)
         {
             if (rb.velocity.x > 0 || rb.velocity.x < 0)
@@ -39,20 +45,19 @@ public class SpritesController : MonoBehaviour
         {
             transform.localScale = new Vector2(-size, size);
         }
+    }
 
-        if (Input.GetMouseButton(0))
+    public void Push(Vector2 force)
+    {
+        rb.AddForce(force);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
         {
-            if (scissors.activeSelf)
-            {
-                animatorScissors.Play("Scissors");
-            }
-        }
-        else
-        {
-            if (scissors.activeSelf)
-            {
-                animatorScissors.Play("ScissorsIdle");
-            }  
+            kill = true;
         }
     }
 }
