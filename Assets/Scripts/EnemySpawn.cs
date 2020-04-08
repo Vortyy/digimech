@@ -5,10 +5,12 @@ using UnityEngine;
 public class EnemySpawn : MonoBehaviour
 {
     public GameObject Enemy;
+    [SerializeField] Wave waveText;
 
-    public float rngWaveType = 2;
+    public float rngWaveType = 1;
     public float rngTimeBetweenSpawn = 1;
     public float rngNbEnemies = 1;
+    public float multiplier = 0.95f;
     void Start()
     {
         StartCoroutine(EnemySpawning());
@@ -36,13 +38,9 @@ public class EnemySpawn : MonoBehaviour
         enemy.transform.localScale = new Vector2(-0.6f, 0.6f);
     }
 
-    void IncrementSpeed(float time, float multiplier)
-    {
-        time *= multiplier;
-    }
-
     IEnumerator EnemySpawning()
     {
+        waveText.UpdateWave();
         int wave1 = 0;
         do
         {
@@ -68,17 +66,17 @@ public class EnemySpawn : MonoBehaviour
             yield return new WaitForSeconds(2);
         } while (wave3 < 2);
 
-        float multiplier = 0.75f;
         float wave4andOver = 1;
         do
         {
+            waveText.UpdateWave();
             int i = 0;
             do
             {
                 rngWaveType = Random.Range(1, 7);
                 rngTimeBetweenSpawn = Random.Range(1, 4); // 1 to 3 seconds
                 rngNbEnemies = Random.Range(1, 4); // 1 to 6 enemies
-                IncrementSpeed(rngTimeBetweenSpawn, wave4andOver);
+                float delay = rngTimeBetweenSpawn * wave4andOver;
 
                 // 1: wave to the left
                 // 2: wave to the right
@@ -96,7 +94,7 @@ public class EnemySpawn : MonoBehaviour
                         {
                             spawnEnemyL();
                             j++;
-                            yield return new WaitForSeconds(rngTimeBetweenSpawn);
+                            yield return new WaitForSeconds(delay);
                         } while (j < rngNbEnemies);
                         break;
 
@@ -105,7 +103,7 @@ public class EnemySpawn : MonoBehaviour
                         {
                             spawnEnemyR();
                             j++;
-                            yield return new WaitForSeconds(rngTimeBetweenSpawn);
+                            yield return new WaitForSeconds(delay);
                         } while (j < rngNbEnemies);
                         break;
 
@@ -115,7 +113,7 @@ public class EnemySpawn : MonoBehaviour
                             spawnEnemyL();
                             spawnEnemyR();
                             j++;
-                            yield return new WaitForSeconds(rngTimeBetweenSpawn);
+                            yield return new WaitForSeconds(delay);
                         } while (j < rngNbEnemies);
                         break;
 
@@ -124,7 +122,7 @@ public class EnemySpawn : MonoBehaviour
                         {
                             spawnEnemyT();
                             j++;
-                            yield return new WaitForSeconds(rngTimeBetweenSpawn);
+                            yield return new WaitForSeconds(delay);
                         } while (j < rngNbEnemies);
                         break;
 
@@ -134,7 +132,7 @@ public class EnemySpawn : MonoBehaviour
                             spawnEnemyT();
                             spawnEnemyL();
                             j++;
-                            yield return new WaitForSeconds(rngTimeBetweenSpawn);
+                            yield return new WaitForSeconds(delay);
                         } while (j < rngNbEnemies);
                         break;
 
@@ -144,13 +142,13 @@ public class EnemySpawn : MonoBehaviour
                             spawnEnemyT();
                             spawnEnemyR();
                             j++;
-                            yield return new WaitForSeconds(rngTimeBetweenSpawn);
+                            yield return new WaitForSeconds(delay);
                         } while (j < rngNbEnemies);
                         break;
                 }
 
                 i++;
-            } while (i < 1);
+            } while (i < 10);
 
             wave4andOver *= multiplier;
         } while (true);
