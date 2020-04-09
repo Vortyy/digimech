@@ -5,15 +5,13 @@ using UnityEngine;
 public class EnemyControllerV2 : MonoBehaviour
 {
     private GameObject player;
-    private Rigidbody2D rb;
     private float direction;
 
     public bool kill = false;
     private const float size = 0.6f;
 
     void Start()
-    {
-        rb = this.GetComponent<Rigidbody2D>();
+    { 
         player = GameObject.Find("Player");
     }
 

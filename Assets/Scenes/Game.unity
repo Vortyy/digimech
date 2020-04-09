@@ -216,8 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef528d69684644479bafde5ecb50d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 447826667}
-  damage: 10
 --- !u!61 &13548179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2577,8 +2575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef528d69684644479bafde5ecb50d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 447826667}
-  damage: 10
 --- !u!61 &388895550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3038,7 +3034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathSource: {fileID: 2034161575}
   scoreText: {fileID: 1046972541}
-  value: 50
+  points: 50
 --- !u!114 &447826666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3056,6 +3052,7 @@ MonoBehaviour:
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   isGrounded: 0
+  damageTaken: 10
 --- !u!114 &447826667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4291,8 +4288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef528d69684644479bafde5ecb50d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 447826667}
-  damage: 10
 --- !u!61 &686376038
 BoxCollider2D:
   m_ObjectHideFlags: 0

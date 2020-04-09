@@ -4,14 +4,20 @@ using UnityEngine;
 
 public class TakeDamage : MonoBehaviour
 {
-    [SerializeField] HealthBar healthBar;
-    public float damage = 10;
+    HealthBar healthbar;
+    PlayerControllerV2 playerController;
 
+    private void Start()
+    {
+        playerController = GetComponentInParent<PlayerControllerV2>();
+        healthbar = GetComponentInParent<HealthBar>();
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
-            healthBar.TakeDamage(damage);
+            healthbar.TakeDamage(playerController.damageTaken);
         }
     }
 }

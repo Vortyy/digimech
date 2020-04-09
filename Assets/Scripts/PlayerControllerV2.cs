@@ -6,16 +6,19 @@ using UnityEngine.Animations;
 public class PlayerControllerV2 : MonoBehaviour
 {
     Rigidbody2D rb2d;
+    HealthBar healthbar;
 
     public float speed = 20f;
     public float jumpVelocity = 20f;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
     public bool isGrounded = false;
+    public float damageTaken = 10;
 
     void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        healthbar = GetComponent<HealthBar>();
     }
 
     void Update()
