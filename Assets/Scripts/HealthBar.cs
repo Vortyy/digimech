@@ -17,8 +17,6 @@ public class HealthBar : MonoBehaviour
     public float hitpoint = 100;
     public float maxHitpoint = 100;
 
-    public float damage = 10;
-
     private void Start()
     {
         UpdateHealthbar();

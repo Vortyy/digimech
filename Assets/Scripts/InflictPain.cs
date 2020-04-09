@@ -5,11 +5,12 @@ using UnityEngine.UI;
 
 public class InflictPain : MonoBehaviour
 {
+    [SerializeField] PlayerControllerV2 playerController;
     [SerializeField] AudioClip death;
     [SerializeField] AudioSource deathSource;
     [SerializeField] Score scoreText;
 
-    public float value = 1;
+    public float value = 0;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
@@ -18,7 +19,15 @@ public class InflictPain : MonoBehaviour
             {
                 Destroy(collision.gameObject);
                 deathSource.PlayOneShot(death);
-                scoreText.UpdateScore(value);
+                if (playerController.isGrounded)
+                {
+                    scoreText.UpdateScore(value);
+                }
+                else
+                {
+                    scoreText.UpdateScore(value * 2.5f);
+                }
+                
             }           
         }
     }

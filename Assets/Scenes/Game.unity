@@ -3036,6 +3036,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb898133f434f0428e14f7e22c0c94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerController: {fileID: 447826666}
   death: {fileID: 8300000, guid: 7e86908dac010f74ba1a6e0ccb6c5129, type: 3}
   deathSource: {fileID: 2034161575}
   scoreText: {fileID: 1046972541}
