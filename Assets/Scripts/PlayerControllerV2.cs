@@ -46,11 +46,6 @@ public class PlayerControllerV2 : MonoBehaviour
             rb2d.velocity = new Vector2(-speed, rb2d.velocity.y);      
         }
         else rb2d.velocity = new Vector2(0, rb2d.velocity.y);
-
-        //if (Input.GetMouseButton(0))
-        //{
-        //    col.enabled = !col.enabled;
-        //}
     }
 
     // Detect collision with floor

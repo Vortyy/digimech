@@ -11,7 +11,6 @@ public class HealthBar : MonoBehaviour
     [SerializeField] GameObject healthBarUI;
     [SerializeField] GameObject sickSoundtrack;
     [SerializeField] GameObject deathMenu;
-    [SerializeField] AudioClip deathSound;
     [SerializeField] AudioSource death;
 
     public float hitpoint = 100;
@@ -31,7 +30,7 @@ public class HealthBar : MonoBehaviour
             healthBarUI.SetActive(false);
             sickSoundtrack.SetActive(false);
             deathMenu.SetActive(true);
-            death.PlayOneShot(deathSound);
+            death.Play();
         }
     }
 
