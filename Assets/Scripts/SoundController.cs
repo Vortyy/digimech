@@ -8,8 +8,6 @@ public class SoundController : MonoBehaviour
     [SerializeField] GameObject glove;
     [SerializeField] AudioSource scissorsSnip;
     [SerializeField] AudioSource glovePunch;
-    [SerializeField] AudioClip scissorsSound;
-    [SerializeField] AudioClip gloveSound;
 
     void Start()
     {
@@ -23,12 +21,12 @@ public class SoundController : MonoBehaviour
         {
             if (scissors.activeSelf)
             {
-                scissorsSnip.PlayOneShot(scissorsSound);
+                scissorsSnip.Play();
             }
             
             if (glove.activeSelf)
             {
-                glovePunch.PlayOneShot(gloveSound);
+                glovePunch.Play();
             }
         }
     }

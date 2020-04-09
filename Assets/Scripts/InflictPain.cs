@@ -9,7 +9,7 @@ public class InflictPain : MonoBehaviour
     [SerializeField] AudioSource deathSource;
     [SerializeField] Score scoreText;
 
-    public float value = 0;
+    public float points;
 
     void Start()
     {
@@ -25,11 +25,11 @@ public class InflictPain : MonoBehaviour
                 deathSource.Play();
                 if (playerController.isGrounded)
                 {
-                    scoreText.UpdateScore(value);
+                    scoreText.UpdateScore(points);
                 }
                 else
                 {
-                    scoreText.UpdateScore(value * 2.5f);
+                    scoreText.UpdateScore(points * 2.5f);
                 }
                 
             }           
