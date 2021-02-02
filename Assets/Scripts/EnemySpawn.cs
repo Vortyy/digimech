@@ -35,7 +35,6 @@ public class EnemySpawn : MonoBehaviour
     {
         GameObject enemy = Instantiate(Enemy, transform.position, Quaternion.identity);
         enemy.transform.position = new Vector2(transform.position.x, transform.position.y + 25);
-        enemy.transform.localScale = new Vector2(-0.6f, 0.6f);
     }
 
     IEnumerator EnemySpawning()

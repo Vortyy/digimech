@@ -216,8 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef528d69684644479bafde5ecb50d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 447826667}
-  damage: 10
 --- !u!61 &13548179
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -798,7 +796,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 3.4992535, y: 0.051274538}
@@ -2577,8 +2575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef528d69684644479bafde5ecb50d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 447826667}
-  damage: 10
 --- !u!61 &388895550
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3036,10 +3032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fb898133f434f0428e14f7e22c0c94e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  death: {fileID: 8300000, guid: 7e86908dac010f74ba1a6e0ccb6c5129, type: 3}
   deathSource: {fileID: 2034161575}
   scoreText: {fileID: 1046972541}
-  value: 50
+  points: 50
 --- !u!114 &447826666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3057,6 +3052,7 @@ MonoBehaviour:
   fallMultiplier: 2.5
   lowJumpMultiplier: 2
   isGrounded: 0
+  damageTaken: 10
 --- !u!114 &447826667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3075,11 +3071,9 @@ MonoBehaviour:
   healthBarUI: {fileID: 1592132252}
   sickSoundtrack: {fileID: 790088720}
   deathMenu: {fileID: 88506779}
-  deathSound: {fileID: 8300000, guid: 7e86908dac010f74ba1a6e0ccb6c5129, type: 3}
   death: {fileID: 1715471241}
   hitpoint: 100
   maxHitpoint: 100
-  damage: 10
 --- !u!114 &447826668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3096,8 +3090,6 @@ MonoBehaviour:
   glove: {fileID: 1991517425}
   scissorsSnip: {fileID: 1606960228}
   glovePunch: {fileID: 1583180972}
-  scissorsSound: {fileID: 8300000, guid: 466f60d0d92a9044282d91b219f42647, type: 3}
-  gloveSound: {fileID: 8300000, guid: 99dc519b46d36174eb179460290bc479, type: 3}
 --- !u!1 &503534615
 GameObject:
   m_ObjectHideFlags: 0
@@ -4296,8 +4288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ef528d69684644479bafde5ecb50d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 447826667}
-  damage: 10
 --- !u!61 &686376038
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10156,7 +10146,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 99dc519b46d36174eb179460290bc479, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10168,7 +10158,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -10666,7 +10656,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 69ccfa7fd07e19842b8500e86ad41f7b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10678,7 +10668,7 @@ AudioSource:
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
-  BypassEffects: 0
+  BypassEffects: 1
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
@@ -12741,7 +12731,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 3.5684943, y: 0.021655083}
